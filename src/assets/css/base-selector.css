@@ -1,0 +1,5 @@
+.base-selector { color: #666; }
+.base-selector-btnbar { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; }
+.base-selector-btnbar .base-selector-btn { flex: 1; height: 30px; line-height: 30px; border: 0 none; text-align: center; }
+.base-selector-btnbar .base-selector-btn:nth-child(n+2) { border-left: 1px solid #eee; }
+.base-selector-btnbar .base-selector-btn-cancel { background: #fff; color: #999; }

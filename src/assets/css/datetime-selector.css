@@ -1,0 +1,10 @@
+.datetime-selector { color: #666; }
+.datetime-selector-btnbar { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; }
+.datetime-selector-btnbar .datetime-selector-btn { flex: 1; height: 30px; line-height: 30px; border: 0 none; text-align: center; }
+.datetime-selector-btnbar .datetime-selector-btn:nth-child(n+2) { border-left: 1px solid #eee; }
+.datetime-selector-btnbar .datetime-selector-btn-cancel { background: #fff; color: #999; }
+.datetime-selector-btnbar .datetime-selector-btn-current { border-left: 1px solid #eee; background: #fff; color: #666; }
+.datetime-selector-list { display: flex; background: #fff; }
+.datetime-selector-list>li { flex: 1; }
+.datetime-selector-label-list { display: flex; background: #fff; list-style: none; }
+.datetime-selector-label-list>li { flex: 1; text-align: center; line-height: 24px; }

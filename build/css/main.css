@@ -1,0 +1,27 @@
+ul { padding: 0; margin: 0; }
+.selector { height: 120px; overflow: hidden; position: relative; }
+.selector-list { margin-top: 48px; transition: -webkit-transform ease 0.3s; transition: transform ease 0.3s; transition: transform ease 0.3s, -webkit-transform ease 0.3s; list-style: none; }
+.selector-list.no-transition { transition: none; }
+.selector-item { height: 24px; line-height: 24px; text-align: center; color: #999; }
+.selector-frontsight { position: absolute; top: 48px; left: 0; width: 100%; height: 24px; border-top: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; }
+.selector-item-active { color: #666; }.bottommenu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; z-index: 1000; }
+.bottommenu-leave-active { opacity: 0; transition: all 0s ease 0.3s; }
+.bottommenu-mask { position: absolute; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
+.bottommenu-mask-enter, .bottommenu-mask-leave-active { opacity: 0; }
+.bottommenu-mask-enter-active, .bottommenu-mask-leave-active { transition: opacity 0.3s ease; }
+.bottommenu-body { position: relative; background: #fff; }
+.bottommenu-body-enter,.bottommenu-body-leave-active { -webkit-transform: translateY(100%); transform: translateY(100%); }
+.bottommenu-body-enter-active, .bottommenu-body-leave-active { transition: -webkit-transform 0.3s ease; transition: transform 0.3s ease; transition: transform 0.3s ease, -webkit-transform 0.3s ease; }.datetime-selector { color: #666; }
+.datetime-selector-btnbar { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; border-bottom: 1px solid #eee; }
+.datetime-selector-btnbar .datetime-selector-btn { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; height: 30px; line-height: 30px; border: 0 none; text-align: center; }
+.datetime-selector-btnbar .datetime-selector-btn:nth-child(n+2) { border-left: 1px solid #eee; }
+.datetime-selector-btnbar .datetime-selector-btn-cancel { background: #fff; color: #999; }
+.datetime-selector-btnbar .datetime-selector-btn-current { border-left: 1px solid #eee; background: #fff; color: #666; }
+.datetime-selector-list { display: -webkit-box; display: -ms-flexbox; display: flex; background: #fff; }
+.datetime-selector-list>li { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+.datetime-selector-label-list { display: -webkit-box; display: -ms-flexbox; display: flex; background: #fff; list-style: none; }
+.datetime-selector-label-list>li { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; text-align: center; line-height: 24px; }.base-selector { color: #666; }
+.base-selector-btnbar { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; border-bottom: 1px solid #eee; }
+.base-selector-btnbar .base-selector-btn { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; height: 30px; line-height: 30px; border: 0 none; text-align: center; }
+.base-selector-btnbar .base-selector-btn:nth-child(n+2) { border-left: 1px solid #eee; }
+.base-selector-btnbar .base-selector-btn-cancel { background: #fff; color: #999; }
