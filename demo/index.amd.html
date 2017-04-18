@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+        <title>测试</title>
+        <link rel="stylesheet" href="../build/vue-datetime-selector.css">
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="require.js"></script>
+        <!--<script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>-->
+        <!--<script src="../build/vue-datetime-selector.js"></script>-->
+        <script>
+            require(['https://unpkg.com/vue@2.2.6/dist/vue.js','../build/vue-datetime-selector.js'],function(Vue,VueDatetimeSelector){
+                console.log(Vue);
+                console.log(VueDatetimeSelector)
+                Vue.use(VueDatetimeSelector);
+                var vm = new Vue({
+                    el: '#app',
+                    data () {
+                        return {
+                                time: null,
+                                duration: 0,
+                                durationText: '',
+                                dateSelectorShow: false,
+                                durationSelectorShow: false,
+                                coverImage: null,
+                                durationItemList: [
+                                    { value: 60, text: '1小时' },
+                                    { value: 90, text: '1.5小时' },
+                                    { value: 120, text: '2小时' },
+                                    { value: 150, text: '2.5小时' },
+                                    { value: 180, text: '3小时' },
+                                    { value: 240, text: '4小时' },                    
+                                ]      
+                        }
+                    },
+                    methods: {
+                            dateChange(value){
+                                this.time= value;
+                                this.dateSelectorShow = false;
+                            },
+                            durationChange(data){
+                                this.duration = data.value;
+                                this.durationText = data.text;
+                                this.durationSelectorShow = false;
+                            }
+                    },
+                    template: `
+                            <div class="page">
+                                <div>
+                                    <input type="text" readonly placeholder="请选择日期" :value="time" @click="dateSelectorShow=true" />
+                                    <datetime-selector :show="dateSelectorShow" :default="time" @cancel="dateSelectorShow=false" @change="dateChange"/>
+                                </div>
+                                
+                                <div>
+                                    <input type="text" readonly placeholder="请选择时长" :value="durationText" @click="durationSelectorShow=true" />
+                                    <base-selector :show="durationSelectorShow" :default="duration" :datalist="durationItemList" @cancel="durationSelectorShow=false" @change="durationChange"/>
+                                </div>
+                            </div>
+                            `
+                });
+            });
+        </script>
+    </body>
+</html>

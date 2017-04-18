@@ -1,34 +1,20 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
 
 
 module.exports = {
-    entry: __dirname + '/src/index.js',
+    entry: __dirname + '/src/static.js',
     output: {
         path: __dirname + '/build',
-        filename: '[name].js',
-        chunkFilename: '[name].js',
-        //publicPath: './'
+        filename: 'vue-datetime-selector.js'
     },
-    //devtool: 'eval-source-map',
-    // devServer: {
-    //     contentBase: './build',
-    //     port: 8088,
-    //     inline: true,
-    //     historyApiFallback: true,
-    // },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: __dirname + '/src/index.template.html'
-        }),
-        new ExtractTextPlugin('css/[name].css?[contenthash]'),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
+        new ExtractTextPlugin('vue-datetime-selector.css?[contenthash]'),
+        // new webpack.DefinePlugin({
+        //     'process.env': {
+        //         NODE_ENV: '"production"'
+        //     }
+        // }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
@@ -54,8 +40,8 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
-        alias: {
-            'vue': 'vue/dist/vue.js'
-        }
+        // alias: {
+        //     'vue': 'vue/dist/vue.js'
+        // }
     }
 };
