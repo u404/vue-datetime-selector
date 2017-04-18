@@ -15,7 +15,7 @@ import BaseSelector from './components/BaseSelector';
         }
     };
 
-    if(window.define){  //amd cmd 支持
+    if(window && window.define){  //amd cmd 支持
         window.define(function(){
             return VueDatetimeSelector
         });
